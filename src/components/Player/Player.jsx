@@ -9,7 +9,6 @@ export const Player = ({initialName, symbol}) => {
     setIsEditing((editing) => !editing);
   }
   const handleChange = (event) => {
-    console.log("event", event)
     setPlayerName(event.target.value);
   }
   let editablePlayerName = <span className="player-name">{playerName}</span>;

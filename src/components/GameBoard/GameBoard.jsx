@@ -25,7 +25,7 @@ export const GameBoard = ({onSelectSquare, activePlayerSymbol}) => {
                 {row.map((playerSymbol, colIndex) => {
                     return (
                         <li key={colIndex}>
-                            <button onClick={() => handleSelectSquare(rowIndex, colIndex)}>{playerSymbol}</button>
+                            <button onClick={() => onSelectSquare(rowIndex, colIndex)}>{playerSymbol}</button>
                         </li>
                     )
                 })}                

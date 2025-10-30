@@ -1,7 +1,12 @@
-import React from 'react'
 
-export const Log = () => {
+export const Log = ({gameTurns}) => {
   return (
-    <ol id="log"></ol>
+    <ol id="log">
+        {gameTurns.map((turn) => {
+            return <li key={`${turn.square.row}${turn.square.col}`}>
+                    {`Player: ${turn.player} Selected: ${turn.square.row}, ${turn.square.col}`}
+                </li>
+        })}
+    </ol>
   )
 }

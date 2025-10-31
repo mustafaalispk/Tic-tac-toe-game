@@ -14,7 +14,7 @@ const driveActivePlayer = (gameTurns) => {
 
 function App() {
   const [gameTurns, setGameTurns] = useState([]);
-  const [activePlayer, setActivePlayer] = useState('X');
+  const activePlayer = driveActivePlayer(gameTurns);
   const handleSelectSquare = (rowIndex, colIndex) => {
     setActivePlayer((currentActivePlayer) => currentActivePlayer === 'X' ? 'O' : 'X');
     setGameTurns((prevTurns) => {

@@ -3,6 +3,15 @@ import { GameBoard } from "./components/GameBoard/GameBoard"
 import { Player } from "./components/Player/Player"
 import { Log } from './components/Log/Log';
 
+const driveActivePlayer = (gameTurns) => {
+    let currentPlayer = 'X';
+
+    if (gameTurns.length > 0 && gameTurns[0].player === 'X') {
+      currentPlayer = 'O';
+    }
+  return currentPlayer;
+}
+
 function App() {
   const [gameTurns, setGameTurns] = useState([]);
   const [activePlayer, setActivePlayer] = useState('X');

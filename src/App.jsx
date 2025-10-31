@@ -14,16 +14,16 @@ const driveActivePlayer = (gameTurns) => {
 
 function App() {
   const [gameTurns, setGameTurns] = useState([]);
+
   const activePlayer = driveActivePlayer(gameTurns);
+
   const handleSelectSquare = (rowIndex, colIndex) => {
     setActivePlayer((currentActivePlayer) => currentActivePlayer === 'X' ? 'O' : 'X');
     setGameTurns((prevTurns) => {
-      let currentPlayer = 'X';
-      if (prevTurns.length > 0 && prevTurns[0].player === 'X') {
-        currentPlayer = 'O';
-      }
+      const currentPlayer = driveActivePlayer(prevTurns);
+
       const updatedTurns = [
-        {square: {row: rowIndex, col: colIndex}, player: activePlayer},
+        {square: {row: rowIndex, col: colIndex}, player: currentPlayer},
         ...prevTurns];
       return updatedTurns;
     });
